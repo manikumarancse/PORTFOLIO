@@ -11,6 +11,7 @@
 /* colors */
 
 :root{
+    --base-color:#fff;
     --first-color : #4070f4;
     --second-color: #0e2431;
     --gradient-color : linear-gradiant(to right, #5001fb,#8e0af3);
@@ -56,7 +57,15 @@
 
 }
 
+.darkmode{
+    --base-color:#000;
+    --first-color : #ffffff;
+    --second-color: #a4a5b8;
+    --gradient-color : linear-gradiant(to right, #5001fb,#8e0af3);
 
+
+
+}
 /* base css of website */
 *,::before,::before{
     box-sizing: border-box;
@@ -70,6 +79,7 @@ body{
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--second-color);
+    background: var(--base-color);
 }
 
 h1,h2,p{
@@ -109,7 +119,7 @@ img{
     top: 0;
     left: 0;
     z-index: var(--z-fixed);
-    background: #fff;
+    background:var(--base-color);
     box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 
 
@@ -123,6 +133,7 @@ img{
     font-weight: var(--font-semi);
 
 }
+
 @media screen and (max-width : 768px) {
     .nav_menu{
         position: fixed;
@@ -169,6 +180,7 @@ img{
     font-size: 1.5rem;
     cursor: pointer;
 }
+
 
 /* Active menu */
 .active::after{
@@ -371,6 +383,12 @@ img{
 .work_img img:hover{
     transform: scale(1.1);
 }
+.work_img a h2{
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    margin-top: var(--mb-2);
+    background-color: var(--second-color);
+}
 .control_input{
     width: 100%;
     font-size: var(--normal-font-size);
@@ -414,6 +432,31 @@ footer_title{
     font-size: 1.5rem;
     color: #fff;
     margin: 0 var(--mb-2);
+}
+
+#theme-switch{
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border-radius: 50%;
+     background: var(--second-color);
+     border:  none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#theme-switch svg{
+    fill: var(--first-color) ;
+}
+#theme-switch svg:last-child{
+    display: none;
+}
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+.darkmode #theme-switch svg:last-child{
+    display: block;
 }
 
 @media screen and (min-width : 768px) {
